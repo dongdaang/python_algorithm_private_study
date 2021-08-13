@@ -1,1 +1,3 @@
-print(int(1/2))
+a = [1,2,3]
+b = sorted(a, reverse=True)
+print(b)
