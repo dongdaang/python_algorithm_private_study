@@ -1,3 +1,6 @@
-a = [1,2,3,4]
-for i in range(len(a)-1, -1, -1):
-    print(a[i])
+a = [1,2,3]
+a.append(0)
+for i in range(len(a)):
+    a[i+1] = a[i]
+a[0] = 0    
+print(a)
