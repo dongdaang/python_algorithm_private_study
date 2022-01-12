@@ -1,2 +1,1 @@
-for i in True:
-    print(i)
+print(-7//2)
