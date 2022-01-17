@@ -1,11 +1,22 @@
-def solution(n, arr1, arr2):
-
-    wall = []
-    for i in range(n):
-        arr1[i] = int(bin(arr1[i])[2:])
-        arr2[i] = int(bin(arr2[i])[2:])
-        wall.append(str(arr1[i] + arr2[i]))
-    for i in range(n):
-        wall[i] = wall[i].replace('1','#')
-    print(wall)
-solution(5,	[9, 20, 28, 18, 11], [30, 1, 21, 17, 28])
+def solution(info, edges):
+    answer = tree(0, 0, info, edges)
+    return answer
+def tree(pos, tmp):
+    sheeps = 1
+    wolves = 0
+    for node in edges:
+        if node[0] == pos:
+            if info[node[1]] == 0:
+                sheeps += 1
+                pos = node[1]
+                tmp = node[1]
+                tree(pos, tmp)
+            else:
+                if wolves + 1 < sheeps:
+                    wolves += 1
+                    pos = node[1]
+                    tmp = node[1]
+                    tree(pos, tmp)
+                else:
+                    pos = tmp
+    return sheeps
