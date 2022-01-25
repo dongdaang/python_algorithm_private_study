@@ -1,3 +1,4 @@
-a = [1,2,3,4]
-del(a[0])
-print(a[0])
+a = {'a':3, 'b':2, 'c':1}
+j = 0
+curr_char, count = a[j]
+print(curr_char)
