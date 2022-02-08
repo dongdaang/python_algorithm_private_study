@@ -1,2 +1,3 @@
-for _ in range(1, 1):
-    print(1)
+a = []
+if a.pop() == 1:
+    print('yes')
