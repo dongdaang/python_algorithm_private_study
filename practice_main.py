@@ -1,5 +1,6 @@
-from collections import deque
+a = 0
 
-queue = deque([[1, 2]])
-a, b = queue.popleft()
-print(a)
+for i in range(5):
+    for j in range(5):
+        a = i
+        break
