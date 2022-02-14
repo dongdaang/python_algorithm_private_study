@@ -1,2 +1,2 @@
-a = [i for i in range(5)]
-print(a)
+a = [1,2,3,4]
+print(sum(a[:-1]))
