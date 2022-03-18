@@ -5,14 +5,17 @@ input = sys.stdin.readline
 N, M = map(int, input().split())
 graph = [list(map(int, input().split())) for _ in range(N)]
 year = 0
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
 
 def bfs(i, j):
     queue = deque([(i, j)])
     visited[i][j] = True
     while queue:
         x, y = queue.popleft()
-        for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
-            nx, ny = x + dx, y + dy
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
             if visited[nx][ny] == True:
                 continue
             if graph[nx][ny] <= 0:
